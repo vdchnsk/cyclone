@@ -27,6 +27,34 @@
 .App-link {
   color: #61dafb;
 }
+.weatherInfoTab__outputTab-general{
+  background-image: "../public/";
+  height: 100%;
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+}
+.weatherInfoTab__outputTab-secondary{
+  justify-content: center;
+  border: 1px solid #6C8AD5;
+  height: 50%;
+  width: 24%;
+  border-radius: 15%;
+  -webkit-border-radius: 15%;
+  -moz-border-radius: 15%;
+  -ms-border-radius: 15%;
+  -o-border-radius: 15%;
+  animation:outputTabAppearing 1s;
+  border: 1px solid #6C8AD5;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  -webkit-animation:outputTabAppearing 1s;
+}
+.weatherInfoTab__ouputTab-text{
+  font-size: 17px;
+  font-family: var(--body-font);
+}
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +63,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes outputTabAppearing {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+}
 }
