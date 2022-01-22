@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MainInfoForm({ weatherMethod }) {
+const MainInfoForm = ({ weatherMethod }): JSX.Element => {
   return (
     <form onSubmit={weatherMethod} className="content__form">
       <input
@@ -9,8 +9,11 @@ function MainInfoForm({ weatherMethod }) {
         className="form__inputBar"
         type="text"
       />
-      <button className="form__button">Find</button>
+      <button type="submit" className="form__button">
+        Find
+      </button>
     </form>
   )
 }
+
 export default MainInfoForm

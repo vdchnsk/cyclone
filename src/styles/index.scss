@@ -1,67 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat&family=Roboto:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
+
 :root {
-  --main-font: 'Montserrat', sans-serif; /* для навигации/заголовков */
-  --secondary-font: 'Bad Script'; /* рукописный */
-  --body-font: 'Roboto', sans-serif; /* для заполения информацией */
+  --main-font: 'Montserrat', sans-serif;
+  --secondary-font: 'Bad Script';
+  --body-font: 'Roboto', sans-serif;
 }
 
 input:focus::-webkit-input-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 input:focus:-moz-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 input:focus::-moz-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 input:focus:-ms-input-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 textarea:focus::-webkit-input-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 textarea:focus:-moz-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 textarea:focus::-moz-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
 textarea:focus:-ms-input-placeholder {
   color: transparent;
-} /*USE IT EVERYWHERE!!!*/
+}
+
 .main {
   height: 100vh;
   background-color: #466fd5;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__window {
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    min-width: 600px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
 }
-.main__window {
-  border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  height: 500px;
-  min-width: 600px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-.main__content {
-  width: 100%;
-  height: 100%;
-}
+
 .content__form {
   align-items: center;
   display: inherit;
   height: 20%;
   width: 100%;
 }
+
 .form__inputBar {
   font-family: var(--body-font);
   margin-top: 1%;
@@ -80,6 +86,7 @@ textarea:focus:-ms-input-placeholder {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
 }
+
 .form__inputBar:active,
 .form__inputBar:focus {
   transform: scale(1.1);
@@ -88,6 +95,7 @@ textarea:focus:-ms-input-placeholder {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+
 .form__button {
   transition: 0.5s;
   font-family: var(--body-font);
@@ -105,6 +113,7 @@ textarea:focus:-ms-input-placeholder {
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
 }
+
 .form__button:hover,
 .form__button:focus {
   transform: scale(1.1);
@@ -116,6 +125,7 @@ textarea:focus:-ms-input-placeholder {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+
 .weatherInfoTab {
   height: 80%;
   width: 100%;

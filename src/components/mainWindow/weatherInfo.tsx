@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WeatherTab({ weatherData }) {
+const WeatherTab = ({ weatherData }) => {
   return (
     <div className="weatherInfoTab">
       {weatherData.name && (
