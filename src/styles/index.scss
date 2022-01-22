@@ -39,6 +39,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main {
+  font-family: var(--body-font);
   height: 100vh;
   background-color: #466fd5;
   display: flex;
@@ -69,7 +70,6 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .form__inputBar {
-  font-family: var(--body-font);
   margin-top: 1%;
   transition: 0.5s;
   padding: 5px;
@@ -98,7 +98,6 @@ textarea:focus:-ms-input-placeholder {
 
 .form__button {
   transition: 0.5s;
-  font-family: var(--body-font);
   cursor: pointer;
   width: 100px;
   margin: 20px;

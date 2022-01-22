@@ -1,8 +1,24 @@
-export interface WeathercityInfo {
+import { SyntheticEvent } from '@types/common/general'
+
+interface WeathercityInfo {
   value?: string
   error?: string
 }
 
-export interface WeatherDataElement {
+interface WeatherDataElement {
   city: WeathercityInfo
+}
+interface WeatherData {
+  elements: WeatherDataElement
+}
+
+interface CityDataTransferEvent extends SyntheticEvent {
+  target: WeatherData
+}
+
+export {
+  WeathercityInfo,
+  WeatherDataElement,
+  WeatherData,
+  CityDataTransferEvent,
 }

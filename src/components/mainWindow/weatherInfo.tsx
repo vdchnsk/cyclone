@@ -1,8 +1,12 @@
 import React from 'react'
 
 const WeatherTab = ({ weatherData }) => {
+  if (weatherData.error) {
+    return <h3 className="weatherInfoTab__errorTab">{weatherData.error}</h3>
+  }
+
   return (
-    <div className="weatherInfoTab">
+    <main className="weatherInfoTab">
       {weatherData.name && (
         <div className="weatherInfoTab__outputTab-general">
           <div className="weatherInfoTab__outputTab-secondary">
@@ -17,20 +21,15 @@ const WeatherTab = ({ weatherData }) => {
           </div>
           <div className="weatherInfoTab__outputTab-secondary">
             <h3 className="weatherInfoTab__ouputTab-text">Preassure:</h3>
-            <p className="weatherInfoTab__ouputTab-text">
-              {weatherData?.main?.pressure}
-            </p>
+            <p className="weatherInfoTab__ouputTab-text">{weatherData?.main?.pressure}</p>
           </div>
           <div className="weatherInfoTab__outputTab-secondary">
             <h3 className="weatherInfoTab__ouputTab-text">Sunset:</h3>
-            <p className="weatherInfoTab__ouputTab-text">
-              {weatherData.sunset}
-            </p>
+            <p className="weatherInfoTab__ouputTab-text">{weatherData.sunset}</p>
           </div>
         </div>
       )}
-      <p>{weatherData.error}</p>
-    </div>
+    </main>
   )
 }
 export default WeatherTab
