@@ -1,6 +1,7 @@
 import React from 'react'
+import { WeatherDataElement } from '../../@types/weatherInfo/main'
 
-const WeatherTab = ({ weatherData }) => {
+const WeatherTab = ({ weatherData }: { weatherData: WeatherDataElement }): JSX.Element => {
   if (weatherData.error) {
     return <h3 className="weatherInfoTab__errorTab">{weatherData.error}</h3>
   }
@@ -21,7 +22,7 @@ const WeatherTab = ({ weatherData }) => {
           </div>
           <div className="weatherInfoTab__outputTab-secondary">
             <h3 className="weatherInfoTab__ouputTab-text">Preassure:</h3>
-            <p className="weatherInfoTab__ouputTab-text">{weatherData?.main?.pressure}</p>
+            <p className="weatherInfoTab__ouputTab-text">{weatherData?.main?.pressure} Pa</p>
           </div>
           <div className="weatherInfoTab__outputTab-secondary">
             <h3 className="weatherInfoTab__ouputTab-text">Sunset:</h3>

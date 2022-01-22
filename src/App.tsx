@@ -3,12 +3,13 @@ import './styles/App.scss'
 import MainInfoForm from './components/mainWindow/mainWindow'
 import WeatherTab from './components/mainWindow/weatherInfo'
 import { CITY_IS_NOT_CHOSEN, CITY_IS_NOT_FOUND } from 'constants/Errors'
-import { WeathercityInfo, CityDataTransferEvent } from '@types/weatherInfo/main'
+import { CityDataTransferEvent, WeatherDataElement } from '@types/weatherInfo/main'
+import { formatDate } from './utils/date'
 
 const API_KEY = 'b6fd0cd5ec30f48c66ef2e4ede481445'
 
 const App = () => {
-  const [weatherData, setWeatherData] = useState<WeathercityInfo>({})
+  const [weatherData, setWeatherData] = useState<WeatherDataElement>({})
   const [weatherDataIsLoading, setWeatherDataIsLoading] = useState<boolean>(true)
 
   const getWeather = async (event: CityDataTransferEvent) => {
@@ -22,7 +23,15 @@ const App = () => {
       })
     }
 
+    const getSunset = (sunsetData: any): string => {
+      const sunset = sunsetData?.sys?.sunset
+
+      return formatDate(sunset)
+    }
+
     if (city) {
+      setWeatherDataIsLoading(true)
+
       try {
         const punctuationless = city.replace(/[.,<>/#!$%^&*;:{}=\-_`~()]/g, '')
         const simplifiedCityName = punctuationless.replace(/\s{2,}/g, '')
@@ -40,24 +49,9 @@ const App = () => {
           })
         }
 
-        setWeatherData(data)
+        setWeatherData({ ...data, sunset: getSunset(data) })
 
-        // * Commented, because it is supposed to be represented as a single function
-        //   if (data.cod !== '404') {
-        //     const sunset = data.sys.sunset
-        //     const date = new Date()
-
-        //     date.setTime(sunset)
-
-        //     const sunset_date =
-        //       date.getHours() +
-        //       'hr:' +
-        //       date.getMinutes() +
-        //       'mn:' +
-        //       date.getSeconds() +
-        //       's'
-
-        // }
+        setWeatherDataIsLoading(false)
       } catch (error: any) {
         setWeatherData({
           ...weatherData,
