@@ -4,10 +4,12 @@ const MainInfoForm = ({ weatherMethod }): JSX.Element => {
   return (
     <form onSubmit={weatherMethod} className="content__form">
       <input
-        name="city"
         placeholder="City"
         className="form__inputBar"
-        type="text"
+        type="search"
+        name="city"
+        autoComplete="off"
+        autoCapitalize="on"
       />
       <button type="submit" className="form__button">
         Find

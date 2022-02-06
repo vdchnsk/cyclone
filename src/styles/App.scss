@@ -29,17 +29,12 @@
 
 .weatherInfoTab__outputTab-secondary {
   justify-content: center;
-  border: 1px solid #6c8ad5;
+  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
   flex-direction: column;
   height: 100%;
   width: 100%;
-  border-radius: 4%;
-  -webkit-border-radius: 4%;
-  -moz-border-radius: 4%;
-  -ms-border-radius: 4%;
-  -o-border-radius: 4%;
   animation: outputTabAppearing 1s;
-  border: 1px solid #6c8ad5;
   align-items: center;
   text-align: center;
   display: flex;
@@ -50,27 +45,13 @@
   margin: 10px;
   font-size: 1.2rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes outputTabAppearing {
-  from {
-    opacity: 0%;
-  }
-  to {
-    opacity: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weatherInfoTab__errorTab {
+  height: 80%;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
 }
