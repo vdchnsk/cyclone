@@ -13,7 +13,7 @@ import { formatDate } from './utils/date'
 import { formApiUri } from './utils/requests'
 import { disablePunctioation, simplifyString } from './utils/regExp'
 
-function App() {
+const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherDataElement>({})
   const [weatherDataIsLoading, setWeatherDataIsLoading] = useState<boolean>(true)
 
