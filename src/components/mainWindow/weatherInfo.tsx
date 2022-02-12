@@ -6,6 +6,10 @@ const WeatherTab = ({ weatherData }: { weatherData: WeatherDataElement }): JSX.E
     return <h3 className="weatherInfoTab__errorTab">{weatherData.error}</h3>
   }
 
+  if (!weatherData.name) {
+    return <h3 className="weatherInfoTab__errorTab">Choose your city above!</h3>
+  }
+
   return (
     <main className="weatherInfoTab">
       {weatherData.name && (

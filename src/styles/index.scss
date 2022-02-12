@@ -39,11 +39,15 @@ textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
 
+body {
+  background-image: url('../../public/assets/scenery/main_background.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
 .main {
   font-family: var(--body-font);
   height: 100vh;
-  background-image: url('../../public/assets/scenery/main_background.jpg');
-  background-color: #466fd5;
   display: flex;
   justify-content: center;
   align-items: center;
