@@ -1,18 +1,29 @@
 import React from 'react'
+
+import { Alert } from '../alert/alert'
 import { WeatherDataElement } from '../../@types/weatherInfo/main'
+import { CHOOSE_CITY_ABOVE } from '../../constants/Errors'
 
 const WeatherTab = ({ weatherData }: { weatherData: WeatherDataElement }): JSX.Element => {
   if (weatherData.error) {
-    return <h3 className="weatherInfoTab__errorTab">{weatherData.error}</h3>
+    return (
+      <Alert message={weatherData.error} iconSource="../../../public/assets/icons/error_icon.png" />
+    )
   }
 
   if (!weatherData.name) {
-    return <h3 className="weatherInfoTab__errorTab">Choose your city above!</h3>
+    return (
+      <Alert
+        message={CHOOSE_CITY_ABOVE}
+        iconSource="../../../public/assets/icons/notify_icon.png"
+      />
+    )
   }
 
   return (
     <main className="weatherInfoTab">
       {weatherData.name && (
+        // TODO: create seperated component for these sections
         <div className="weatherInfoTab__outputTab-general">
           <div className="weatherInfoTab__outputTab-secondary">
             <img

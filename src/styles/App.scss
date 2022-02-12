@@ -46,12 +46,17 @@
   font-size: 1.2rem;
 }
 .weatherInfoTab__errorTab {
-  height: 80%;
   display: flex;
+  flex-direction: column;
+  height: 80%;
   width: 100%;
   text-align: center;
   justify-content: center;
   align-items: center;
   box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
     inset 4px 0px 1px 1px lightgray;
+
+  .errorTab_message {
+    margin: 20px;
+  }
 }
