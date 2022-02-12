@@ -74,6 +74,11 @@ textarea:focus:-ms-input-placeholder {
   font-family: var(--main-font);
   margin-top: 1%;
   padding: 10px;
+  background-image: url('../../public/assets/icons/search_icon.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 32px;
+  padding-left: 33px;
   outline: none;
   min-width: 28%;
   box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
