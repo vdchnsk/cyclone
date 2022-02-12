@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+
 import './styles/App.scss'
+
+import { CityDataTransferEvent, WeatherDataElement } from '@types/weatherInfo/main'
+
 import MainInfoForm from './components/mainWindow/mainWindow'
 import WeatherTab from './components/mainWindow/weatherInfo'
-import { CITY_IS_NOT_CHOSEN, CITY_IS_NOT_FOUND } from './constants/Errors'
-import { CityDataTransferEvent, WeatherDataElement } from '@types/weatherInfo/main'
-import { formatDate } from './utils/date'
 
-const API_KEY = 'b6fd0cd5ec30f48c66ef2e4ede481445'
+import { CITY_IS_NOT_CHOSEN, CITY_IS_NOT_FOUND } from './constants/Errors'
+
+import { formatDate } from './utils/date'
+import { formApiUri } from './utils/requests'
+import { disablePunctioation, simplifyString } from './utils/regExp'
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherDataElement>({})
@@ -14,6 +19,7 @@ function App() {
 
   const getWeather = async (event: CityDataTransferEvent) => {
     event.preventDefault()
+
     const city = event.target?.elements?.city?.value ?? ''
 
     if (!city) {
@@ -33,12 +39,10 @@ function App() {
       setWeatherDataIsLoading(true)
 
       try {
-        const punctuationless = city.replace(/[.,<>/#!$%^&*;:{}=\-_`~()]/g, '')
-        const simplifiedCityName = punctuationless.replace(/\s{2,}/g, '')
+        const punctuationlessCityName = disablePunctioation(city)
+        const simplifiedCityName = simplifyString(punctuationlessCityName)
 
-        const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/weather?units=metric&q=${simplifiedCityName}&appid=${API_KEY}`,
-        )
+        const response = await fetch(formApiUri(simplifiedCityName))
 
         const data = await response.json()
 
