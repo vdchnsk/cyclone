@@ -76,11 +76,13 @@ body {
 
 .form__inputBar {
   font-family: var(--main-font);
+  font-size: 0.8rem;
   margin-top: 1%;
   padding: 10px;
   background-image: url('../../public/assets/icons/search_icon.png');
   background-repeat: no-repeat;
   background-position: left;
+  background-position-x: 2px;
   background-size: 32px;
   padding-left: 33px;
   outline: none;
