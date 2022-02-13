@@ -1,3 +1,5 @@
+@use './variables.scss' as vars;
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +33,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 body {
-  background-image: url('../../public/assets/scenery/main_background.jpg');
+  background-image: vars.$background_main;
   background-repeat: no-repeat;
   background-size: auto;
 }

@@ -7,17 +7,12 @@
     pointer-events: none;
   }
   &-header {
-    background-color: #282c34;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  &-link {
-    color: #61dafb;
   }
 }
 .weatherInfoTab {
@@ -27,7 +22,6 @@
 }
 
 .weatherInfoTab__outputTab-general {
-  background-image: '../public/';
   height: 100%;
   width: 100%;
   display: grid;
@@ -41,10 +35,10 @@
   height: 100%;
   width: 100%;
   animation: outputTabAppearing 1s;
+  -webkit-animation: outputTabAppearing 1s;
   align-items: center;
   text-align: center;
   display: flex;
-  -webkit-animation: outputTabAppearing 1s;
 }
 
 .weatherInfoTab__ouputTab-text {

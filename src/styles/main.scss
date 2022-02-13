@@ -1,5 +1,7 @@
 @use './variables.scss' as vars;
 
+$form_button_color_focus: rgb(226, 226, 226);
+
 .main {
   font-family: vars.$body_font;
   height: 100vh;
@@ -8,7 +10,7 @@
   align-items: center;
 
   &__window {
-    background-color: rgb(255, 255, 255);
+    background-color: vars.$background_home;
     height: 500px;
     min-width: 600px;
   }
@@ -33,7 +35,7 @@
   font-size: 0.8rem;
   margin-top: 1%;
   padding: 10px;
-  background-image: url('../../public/assets/icons/search_icon.png');
+  background-image: vars.$icon_search;
   background-repeat: no-repeat;
   background-position: left;
   background-position-x: 2px;
@@ -68,10 +70,10 @@
   position: relative;
   box-shadow: vars.$main_boxshadow;
   &:hover {
-    background-color: rgb(226, 226, 226);
+    background-color: $form_button_color_focus;
   }
   &:focus {
-    background-color: rgb(226, 226, 226);
+    background-color: $form_button_color_focus;
   }
   &:active {
     top: 1px;

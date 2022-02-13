@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat&family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+// * Fonts
+$main_font: 'Press Start 2P', sans-serif;
+$body_font: 'Press Start 2P', sans-serif;
+
+// * Assets
+$background_main: url('../../public/assets/scenery/main_background.jpg');
+$icon_search: url('../../public/assets/icons/search_icon.png');
+
 // * Box shadow
 $main_boxshadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
   inset 4px 0px 1px 1px lightgray;
 
-// * Fonts
-$main_font: 'Press Start 2P', sans-serif;
-$body_font: 'Press Start 2P', sans-serif;
+// * Colors
+$background_home: rgb(226, 226, 226);
