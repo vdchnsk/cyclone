@@ -1,0 +1,99 @@
+@use './variables.scss' as vars;
+
+.main {
+  font-family: vars.$body_font;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__window {
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    min-width: 600px;
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content__form {
+  overflow: hidden;
+  align-items: center;
+  display: inherit;
+  height: 20%;
+  width: 100%;
+  padding: 10px;
+  box-shadow: vars.$main_boxshadow;
+}
+
+.form__inputBar {
+  font-family: vars.$main_font;
+  font-size: 0.8rem;
+  margin-top: 1%;
+  padding: 10px;
+  background-image: url('../../public/assets/icons/search_icon.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 2px;
+  background-size: 32px;
+  padding-left: 33px;
+  outline: none;
+  min-width: 28%;
+  box-shadow: vars.$main_boxshadow;
+}
+
+.form__inputBar:active,
+.form__inputBar:focus {
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+}
+
+.form__button {
+  cursor: pointer;
+  width: 100px;
+  margin: 20px;
+  outline: none;
+  background-color: white;
+  padding: 12px;
+  font-size: 0.8rem;
+  font-family: vars.$main_font;
+  background: white;
+  font-family: vars.$main_font;
+  border: 0px;
+  position: relative;
+  box-shadow: vars.$main_boxshadow;
+  &:hover {
+    background-color: rgb(226, 226, 226);
+  }
+  &:focus {
+    background-color: rgb(226, 226, 226);
+  }
+  &:active {
+    top: 1px;
+  }
+  &::after {
+    content: '';
+    background: black;
+    position: absolute;
+    left: -2.5%;
+    top: 0;
+    width: 105%;
+    height: 100%;
+    z-index: -1;
+  }
+  &::before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: 0;
+    top: -1%;
+    width: 100%;
+    height: 107%;
+    z-index: -1;
+  }
+}

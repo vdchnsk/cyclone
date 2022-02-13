@@ -1,3 +1,5 @@
+@use './variables.scss' as vars;
+
 .App {
   text-align: center;
   &-logo {
@@ -18,6 +20,11 @@
     color: #61dafb;
   }
 }
+.weatherInfoTab {
+  height: 80%;
+  width: 100%;
+  box-shadow: vars.$main_boxshadow;
+}
 
 .weatherInfoTab__outputTab-general {
   background-image: '../public/';
@@ -29,8 +36,7 @@
 
 .weatherInfoTab__outputTab-secondary {
   justify-content: center;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
+  box-shadow: vars.$main_boxshadow;
   flex-direction: column;
   height: 100%;
   width: 100%;
@@ -53,8 +59,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
+  box-shadow: vars.$main_boxshadow;
 
   .errorTab_message {
     margin: 20px;

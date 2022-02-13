@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import '../../styles/App.scss'
+import '../../styles/homePage.scss'
 
 import { CityDataTransferEvent, WeatherDataElement } from '@types/weatherInfo/main'
 

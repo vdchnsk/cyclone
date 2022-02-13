@@ -1,17 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat&family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-}
-
-:root {
-  --main-font: 'Press Start 2P', sans-serif;
-  --secondary-font: 'Bad Script';
-  --body-font: 'Press Start 2P', sans-serif;
 }
 
 input:focus::-webkit-input-placeholder {
@@ -43,112 +34,4 @@ body {
   background-image: url('../../public/assets/scenery/main_background.jpg');
   background-repeat: no-repeat;
   background-size: auto;
-}
-
-.main {
-  font-family: var(--body-font);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__window {
-    background-color: rgb(255, 255, 255);
-    height: 500px;
-    min-width: 600px;
-  }
-  &__content {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.content__form {
-  overflow: hidden;
-  align-items: center;
-  display: inherit;
-  height: 20%;
-  width: 100%;
-  padding: 10px;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
-}
-
-.form__inputBar {
-  font-family: var(--main-font);
-  font-size: 0.8rem;
-  margin-top: 1%;
-  padding: 10px;
-  background-image: url('../../public/assets/icons/search_icon.png');
-  background-repeat: no-repeat;
-  background-position: left;
-  background-position-x: 2px;
-  background-size: 32px;
-  padding-left: 33px;
-  outline: none;
-  min-width: 28%;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
-}
-
-.form__inputBar:active,
-.form__inputBar:focus {
-  transform: scale(1.04);
-  -webkit-transform: scale(1.04);
-  -moz-transform: scale(1.04);
-  -ms-transform: scale(1.04);
-  -o-transform: scale(1.04);
-}
-
-.form__button {
-  cursor: pointer;
-  width: 100px;
-  margin: 20px;
-  outline: none;
-  background-color: white;
-  padding: 12px;
-  font-size: 0.8rem;
-  font-family: --main-font, cursive;
-  background: white;
-  font-family: var(--main-font);
-  border: 0px;
-  position: relative;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
-  &:hover {
-    background-color: rgb(226, 226, 226);
-  }
-  &:focus {
-    background-color: rgb(226, 226, 226);
-  }
-  &:active {
-    top: 1px;
-  }
-  &::after {
-    content: '';
-    background: black;
-    position: absolute;
-    left: -2.5%;
-    top: 0;
-    width: 105%;
-    height: 100%;
-    z-index: -1;
-  }
-  &::before {
-    content: '';
-    background: black;
-    position: absolute;
-    left: 0;
-    top: -1%;
-    width: 100%;
-    height: 107%;
-    z-index: -1;
-  }
-}
-
-.weatherInfoTab {
-  height: 80%;
-  width: 100%;
-  box-shadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
-    inset 4px 0px 1px 1px lightgray;
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './styles/App.scss'
+import './styles/main.scss'
 
 import { HomePage } from './pages/home/HomePage'
 
