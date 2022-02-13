@@ -1,6 +1,8 @@
 import React from 'react'
 
-const MainInfoForm = ({ weatherMethod }): JSX.Element => (
+import { Find } from '../../localization/Strings'
+
+const MainInfoForm = ({ weatherMethod }: { weatherMethod }): JSX.Element => (
   <form onSubmit={weatherMethod} className="content__form">
     <input
       placeholder="City"
@@ -11,7 +13,7 @@ const MainInfoForm = ({ weatherMethod }): JSX.Element => (
       autoCapitalize="on"
     />
     <button type="submit" className="form__button">
-      Find
+      {Find}
     </button>
   </form>
 )

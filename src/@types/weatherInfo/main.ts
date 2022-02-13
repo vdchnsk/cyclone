@@ -12,6 +12,7 @@ interface WeatherDataElementMain {
 
 interface WeatherDataElementSystem {
   country?: string
+  sunset?: string
 }
 
 export interface WeatherDataElement {

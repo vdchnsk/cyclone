@@ -17,51 +17,49 @@ const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherDataElement>({})
   const [weatherDataIsLoading, setWeatherDataIsLoading] = useState<boolean>(true)
 
-  const getWeather = async (event: CityDataTransferEvent) => {
+  const getWeather = async (event: CityDataTransferEvent): Promise<void> => {
     event.preventDefault()
 
     const city = event.target?.elements?.city?.value ?? ''
 
     if (!city) {
-      setWeatherData({
+      return setWeatherData({
         ...weatherData,
         error: CITY_IS_NOT_CHOSEN,
       })
     }
 
-    const getSunset = (sunsetData: any): string => {
+    const getSunset = (sunsetData: WeatherDataElement): string => {
       const sunset = sunsetData?.sys?.sunset
 
-      return formatDate(sunset)
+      return formatDate(Number(sunset))
     }
 
-    if (city) {
-      setWeatherDataIsLoading(true)
+    setWeatherDataIsLoading(true)
 
-      try {
-        const punctuationlessCityName = disablePunctioation(city)
-        const simplifiedCityName = simplifyString(punctuationlessCityName)
+    try {
+      const punctuationlessCityName = disablePunctioation(city)
+      const simplifiedCityName = simplifyString(punctuationlessCityName)
 
-        const response = await fetch(formApiUri(simplifiedCityName))
+      const response = await fetch(formApiUri(simplifiedCityName))
 
-        const data = await response.json()
+      const data = await response.json()
 
-        if (data.cod === '404') {
-          return setWeatherData({
-            ...weatherData,
-            error: CITY_IS_NOT_FOUND,
-          })
-        }
-
-        setWeatherData({ ...data, sunset: getSunset(data) })
-
-        setWeatherDataIsLoading(false)
-      } catch (error: any) {
-        setWeatherData({
+      if (data.cod === '404') {
+        return setWeatherData({
           ...weatherData,
-          error: error.message,
+          error: CITY_IS_NOT_FOUND,
         })
       }
+
+      setWeatherData({ ...data, sunset: getSunset(data) })
+
+      setWeatherDataIsLoading(false)
+    } catch (error: any) {
+      setWeatherData({
+        ...weatherData,
+        error: error.message,
+      })
     }
   }
   return (
