@@ -15,6 +15,7 @@
 - TypeScript
 - React
 - SCSS
+- Vite
 
 ### 🧠 Back-end
 
