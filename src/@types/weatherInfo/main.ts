@@ -24,7 +24,8 @@ export interface WeatherDataElement {
   error?: string
 }
 export interface WeatherData {
-  elements: WeatherDataElement
+  elements?: WeatherDataElement
+  cod?: string
 }
 
 export interface CityDataTransferEvent extends SyntheticEvent {

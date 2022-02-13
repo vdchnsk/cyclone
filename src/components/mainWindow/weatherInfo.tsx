@@ -23,34 +23,32 @@ const WeatherTab = ({ weatherData }: { weatherData: WeatherDataElement }): JSX.E
 
   return (
     <main className="weatherInfoTab">
-      {weatherData.name && (
-        <div className="weatherInfoTab__outputTab-general">
-          <WeatherInfoCard
-            tabTitle="Place"
-            content={`${weatherData?.name}, ${weatherData?.sys?.country}`}
-            image="../../../public/assets/icons/buildings_icon.png"
-            imageAlt="Building illustraion"
-          />
-          <WeatherInfoCard
-            tabTitle="Temperature"
-            content={`${weatherData?.main?.temp} °C`}
-            image="../../../public/assets/icons/thermometer_icon.png"
-            imageAlt="Temperature illustraion"
-          />
-          <WeatherInfoCard
-            tabTitle="Preassure"
-            content={`${weatherData?.main?.pressure} Pa`}
-            image="../../../public/assets/icons/preassure_icon.png"
-            imageAlt="Preassure illustraion"
-          />
-          <WeatherInfoCard
-            tabTitle="Sunset"
-            content={weatherData.sunset}
-            image="../../../public/assets/icons/sunset_icon.png"
-            imageAlt="Preassure illustraion"
-          />
-        </div>
-      )}
+      <div className="weatherInfoTab__outputTab-general">
+        <WeatherInfoCard
+          tabTitle="Place"
+          content={`${weatherData?.name}, ${weatherData?.sys?.country}`}
+          image="../../../public/assets/icons/buildings_icon.png"
+          imageAlt="Building illustraion"
+        />
+        <WeatherInfoCard
+          tabTitle="Temperature"
+          content={`${weatherData?.main?.temp} °C`}
+          image="../../../public/assets/icons/thermometer_icon.png"
+          imageAlt="Temperature illustraion"
+        />
+        <WeatherInfoCard
+          tabTitle="Preassure"
+          content={`${weatherData?.main?.pressure} Pa`}
+          image="../../../public/assets/icons/preassure_icon.png"
+          imageAlt="Preassure illustraion"
+        />
+        <WeatherInfoCard
+          tabTitle="Sunset"
+          content={weatherData.sunset}
+          image="../../../public/assets/icons/sunset_icon.png"
+          imageAlt="Preassure illustraion"
+        />
+      </div>
     </main>
   )
 }
