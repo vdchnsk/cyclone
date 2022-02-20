@@ -7,28 +7,14 @@
   text-decoration: none;
 }
 
-input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-input:focus:-moz-placeholder {
-  color: transparent;
-}
-input:focus::-moz-placeholder {
-  color: transparent;
-}
-input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-textarea:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-textarea:focus:-moz-placeholder {
-  color: transparent;
-}
+input:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder,
+input:focus::-moz-placeholder,
+input:focus:-ms-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:focus:-moz-placeholder,
+textarea:focus:-ms-input-placeholder,
 textarea:focus::-moz-placeholder {
-  color: transparent;
-}
-textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
 
@@ -36,4 +22,9 @@ body {
   background-image: vars.$background_main;
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+::-moz-selection,
+::selection {
+  background: vars.$color_text_selection;
 }

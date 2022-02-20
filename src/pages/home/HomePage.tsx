@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 import '../../styles/homePage.scss'
 
-import { CityDataTransferEvent, WeatherDataElement } from '@types/weatherInfo/main'
+import type { CityDataTransferEvent, WeatherDataElement } from 'weatherInfo/main'
 
-import MainInfoForm from '../../components/mainWindow/mainWindow'
-import WeatherTab from '../../components/mainWindow/weatherInfo'
+import { MainInfoForm } from '../../components/mainWindow/MainInfoForm'
+import { WeatherTab } from '../../components/mainWindow/WeatherTab'
 
 import { CITY_IS_NOT_CHOSEN, CITY_IS_NOT_FOUND } from '../../constants/Errors'
 import { ApiResponse } from '../../constants/API'
@@ -24,9 +24,7 @@ export const HomePage = () => {
 
     const response = await fetch(formApiUri(simplifiedCityName))
 
-    const data = await response.json()
-
-    return data
+    return response.json()
   }
 
   const getWeather = async (event: CityDataTransferEvent): Promise<void> => {

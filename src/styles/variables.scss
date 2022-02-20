@@ -6,12 +6,13 @@ $main_font: 'Press Start 2P', sans-serif;
 $body_font: 'Press Start 2P', sans-serif;
 
 // * Assets
-$background_main: url('../../public/assets/scenery/main_background.jpg');
-$icon_search: url('../../public/assets/icons/search_icon.png');
+$background_main: url('assets/scenery/main_background.jpg');
+$icon_search: url('assets/icons/search_icon.png');
 
 // * Box shadow
 $main_boxshadow: inset -4px 2px 1px 1px rgb(146, 146, 146), inset -4px -2px 1px 1px lightgray,
   inset 4px 0px 1px 1px lightgray;
 
 // * Colors
+$color_text_selection: rgb(166, 187, 255);
 $background_home: rgb(226, 226, 226);

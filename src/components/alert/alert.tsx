@@ -1,4 +1,3 @@
-import React from 'react'
 import { SMTH_WENT_WRONG } from '../../constants/Errors'
 
 export const Alert = ({
@@ -8,7 +7,7 @@ export const Alert = ({
   message: string
   iconSource: string
 }): JSX.Element => {
-  const defaultIcon = '../../../public/assets/icons/error_icon.png'
+  const defaultIcon = '/assets/icons/error_icon.png'
 
   return (
     <div className="weatherInfoTab__errorTab">

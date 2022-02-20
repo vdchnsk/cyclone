@@ -1,4 +1,4 @@
-import { SyntheticEvent } from '@types/common/general'
+import type { SyntheticEvent } from 'common/general'
 
 interface WeatherCityInfo {
   value?: string
