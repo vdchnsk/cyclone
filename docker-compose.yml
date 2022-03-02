@@ -1,0 +1,14 @@
+#docker-compose file
+version: '3'
+
+services:
+  weather_forecast:
+    container_name: weather_forecast
+    image: weather_forecast:1.0.1
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
