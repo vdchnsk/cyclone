@@ -1,4 +1,4 @@
-# ☔ Weather forecast
+# ☔ Cyclone
 
 **Version 0.6.0**
 
